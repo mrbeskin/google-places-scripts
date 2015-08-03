@@ -9,14 +9,12 @@ require('./routes')(app);
 // Error handling
 app.use(function(req, res){
   res.type('text/plain');
-  res.status(404);
-  res.send('404 - Not Found');
+  res.status(404).send('not found')
 });
 
-app.use(function(req, res){
+app.use(function(err, req, res){
   res.type('text/plain');
-  res.status(500);
-  res.send('500 - Server Error');
+  res.status(500).json({error: err});
 });
 
 app.listen(app.get('port'), function() {
