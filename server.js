@@ -6,15 +6,8 @@ app.set('port', process.env.PORT || 80);
 
 require('./routes')(app);
 
-// Error handling
-app.use(function(req, res){
-  res.type('text/plain');
-  res.status(404).send('not found')
-});
-
-app.use(function(err, req, res){
-  res.type('text/plain');
-  res.status(500).json({error: err});
+app.use(function(err, req, res, next){
+  res.status(500).json({error: err.toString()});
 });
 
 app.listen(app.get('port'), function() {

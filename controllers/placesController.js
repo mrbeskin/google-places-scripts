@@ -1,6 +1,6 @@
 var request = require('request');
 
-function placesController(req, res, next){
+function placesController(req, res, next) {
   var baseURL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
 
   // get full query string from client request
@@ -13,6 +13,7 @@ function placesController(req, res, next){
     console.log(err);
     next(err);
   }).pipe(res);
+
 }
 
 module.exports = placesController;
