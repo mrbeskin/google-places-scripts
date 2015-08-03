@@ -16,5 +16,5 @@ A module that can easily be integrated into a server to provide an endpoint for 
 
 Sample URL for hitting a server running at localhost on port 3000:
 
-'localhost:3000/googleplaces/nearby?location=-33.8670522,151.1957362&radius=500'
+`localhost:3000/googleplaces/nearby?location=-33.8670522,151.1957362&radius=500`
 
